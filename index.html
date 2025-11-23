@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weatherly — Forecast App</title>
+
+  <!-- Tailwind Play CDN (quick for assignments) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Optional small stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Fav icon -->
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+</head>
+<body class="min-h-screen bg-gradient-to-b from-sky-100 to-white transition-colors duration-500">
+  <div class="max-w-4xl mx-auto p-4">
+    <header class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
+      <h1 class="text-2xl md:text-3xl font-semibold">Weatherly</h1>
+
+      <div class="flex gap-2 w-full md:w-auto">
+        <div class="flex items-center space-x-2 w-full md:w-auto">
+          <input id="cityInput" placeholder="Search city (e.g., Kanpur)" class="p-2 rounded-lg border w-full md:w-64 focus:outline-none" />
+          <button id="searchBtn" class="px-3 py-2 bg-sky-600 text-white rounded-lg shadow">Search</button>
+        </div>
+
+        <button id="geoBtn" title="Use current location" class="px-3 py-2 border rounded-lg">📍</button>
+
+        <div class="relative">
+          <button id="recentBtn" class="px-3 py-2 border rounded-lg">Recent ▾</button>
+          <div id="recentDropdown" class="absolute right-0 mt-2 w-48 bg-white border rounded shadow hidden z-10"></div>
+        </div>
+
+        <div class="flex items-center ml-2">
+          <label class="text-sm mr-1">Today:</label>
+          <button id="unitToggle" class="px-2 py-1 border rounded">°C</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Alerts area -->
+      <div id="alertArea" class="mb-4"></div>
+
+      <!-- Current weather card -->
+      <section id="currentCard" class="bg-white p-4 rounded-lg shadow mb-6 hidden">
+        <div class="flex items-center gap-4">
+          <div class="flex-1">
+            <h2 id="locationName" class="text-xl font-semibold"></h2>
+            <p id="localTime" class="text-sm text-gray-500"></p>
+            <p id="weatherDescription" class="mt-1"></p>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <img id="weatherIcon" alt="icon" class="w-20 h-20" />
+            <div class="text-right">
+              <div class="text-4xl font-bold" id="todayTemp">--°C</div>
+              <div class="text-sm text-gray-600" id="feelsLike">Feels like: --°C</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 grid grid-cols-3 gap-3 text-sm">
+          <div class="p-2 border rounded text-center">
+            <div class="font-semibold" id="humidity">--%</div>
+            <div class="text-gray-500">Humidity</div>
+          </div>
+          <div class="p-2 border rounded text-center">
+            <div class="font-semibold" id="wind">-- m/s</div>
+            <div class="text-gray-500">Wind</div>
+          </div>
+          <div class="p-2 border rounded text-center">
+            <div class="font-semibold" id="pressure">-- hPa</div>
+            <div class="text-gray-500">Pressure</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5-day forecast -->
+      <section id="forecastSection" class="hidden">
+        <h3 class="mb-3 text-lg font-semibold">5-Day Forecast</h3>
+        <div id="forecastContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3"></div>
+      </section>
+
+      <!-- Error / info popups -->
+      <div id="popup" class="fixed bottom-6 right-6 bg-white border p-3 rounded shadow hidden z-20"></div>
+
+      <footer class="mt-8 text-sm text-gray-600">
+        Built with JavaScript & Tailwind • Data source: OpenWeatherMap
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
