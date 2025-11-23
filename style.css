@@ -17,4 +17,6 @@ body.cloudy {
 }
 
 /* Small responsive tweaks */
-#todayTemp { line-height: 1; }
+#todayTemp { 
+    line-height: 1; 
+}
