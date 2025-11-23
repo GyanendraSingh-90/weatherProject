@@ -1,0 +1,20 @@
+/* style.css - tiny helpers */
+
+/* Rainy background when condition contains 'rain' */
+body.rainy {
+  background: linear-gradient(180deg, #a1c4fd 0%, #c2e9fb 50%, #dbeafe 100%);
+  background-attachment: fixed;
+}
+
+/* Sunny */
+body.sunny {
+  background: linear-gradient(180deg, #fff7b2 0%, #ffe9a8 40%, #ffd9a8 100%);
+}
+
+/* Cloudy */
+body.cloudy {
+  background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 60%, #f8fafc 100%);
+}
+
+/* Small responsive tweaks */
+#todayTemp { line-height: 1; }
