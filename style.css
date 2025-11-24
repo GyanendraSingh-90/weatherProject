@@ -20,3 +20,16 @@ body.cloudy {
 #todayTemp { 
     line-height: 1; 
 }
+
+/* Fixing Toggle Button */
+button#unitToggle {
+    width: 30px;
+  }
+
+/* Footer Section */
+.max-w-4xl.mx-auto.p-4 {    
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+  }

@@ -245,9 +245,13 @@ function cToF(c) {
   return Math.round((c * 9/5) + 32);
 }
 
-function round(n) { return Math.round(n); }
+function round(n) { 
+  return Math.round(n); 
+}
 
-function capitalize(s=''){ return s.charAt(0).toUpperCase() + s.slice(1); }
+function capitalize(s=''){ 
+  return s.charAt(0).toUpperCase() + s.slice(1); 
+}
 
 /* Recent cities localStorage (simple LIFO unique list) */
 function loadRecentCities() {
