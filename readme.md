@@ -20,3 +20,5 @@ Weatherly fetches weather data from OpenWeatherMap and displays:-
 5. Responsive layout (desktop, tablet, phone)
 6. Icons from OpenWeatherMap
 
+**GitHub Link**
+=> https://github.com/GyanendraSingh-90/weatherProject
