@@ -69,7 +69,8 @@ function useGeolocation() {
     const { latitude, longitude } = pos.coords;
     try {
       await fetchWeatherByCoords(latitude, longitude);
-    } catch (err) {
+    } 
+    catch (err) {
       showPopup('Unable to fetch weather for your location', 'error');
     }
   }, (err) => {
@@ -86,7 +87,8 @@ async function fetchWeatherByCity(city) {
     updateUI(current, forecast);
     saveRecentCity(current.name);
     showPopup('Weather updated', 'success', 1500);
-  } catch (err) {
+  } 
+  catch (err) {
     showPopup(err.message || 'Error fetching weather', 'error');
     console.error(err);
   }
@@ -101,7 +103,8 @@ async function fetchWeatherByCoords(lat, lon) {
     updateUI(current, forecast);
     saveRecentCity(current.name);
     showPopup('Weather updated', 'success', 1500);
-  } catch (err) {
+  } 
+  catch (err) {
     showPopup(err.message || 'Error fetching weather', 'error');
     console.error(err);
   }
@@ -217,9 +220,11 @@ function applyBackgroundClass(weatherMain) {
   document.body.classList.remove('rainy','sunny','cloudy');
   if (w.includes('rain') || w.includes('drizzle') || w.includes('thunderstorm')) {
     document.body.classList.add('rainy');
-  } else if (w.includes('clear') || w.includes('sun')) {
+  } 
+  else if (w.includes('clear') || w.includes('sun')) {
     document.body.classList.add('sunny');
-  } else {
+  } 
+  else {
     document.body.classList.add('cloudy');
   }
 }
@@ -234,7 +239,8 @@ function toggleUnit() {
     todayTemp.textContent = `${f}°F`;
     feelsLike.textContent = feelsLike.textContent.replace('°C','°F'); // approximate: not converting feels exactly (optional)
     unitToggle.textContent = '°F';
-  } else {
+  } 
+  else {
     todayTemp.textContent = `${currentTodayCelsius}°C`;
     feelsLike.textContent = feelsLike.textContent.replace('°F','°C');
     unitToggle.textContent = '°C';
@@ -258,7 +264,10 @@ function loadRecentCities() {
   try {
     const raw = localStorage.getItem('weatherly_recent') || '[]';
     return JSON.parse(raw);
-  } catch(e) { return []; }
+  } 
+  catch(e) { 
+    return []; 
+  }
 }
 
 function saveRecentCity(city) {
@@ -315,7 +324,8 @@ function checkExtremeTemperature(tempC) {
     div.className = 'p-3 rounded bg-red-50 border border-red-200 text-red-700';
     div.innerHTML = `<strong>Heat alert:</strong> Temperature is ${Math.round(t)}°C — stay hydrated and avoid prolonged sun exposure.`;
     alertArea.appendChild(div);
-  } else if (t <= -10) {
+  } 
+  else if (t <= -10) {
     const div = document.createElement('div');
     div.className = 'p-3 rounded bg-blue-50 border border-blue-200 text-blue-700';
     div.innerHTML = `<strong>Cold alert:</strong> Temperature is ${Math.round(t)}°C — dress warmly and take care outdoors.`;
