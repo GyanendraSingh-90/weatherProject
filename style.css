@@ -2,18 +2,18 @@
 
 /* Rainy background when condition contains 'rain' */
 body.rainy {
-  background: linear-gradient(180deg, #a1c4fd 0%, #c2e9fb 50%, #dbeafe 100%);
+  background: linear-gradient(180deg, #a1c4fd 0%, rgb(147, 209, 238) 50%, #dbeafe 100%);
   background-attachment: fixed;
 }
 
 /* Sunny */
 body.sunny {
-  background: linear-gradient(180deg, #fff7b2 0%, #ffe9a8 40%, #ffd9a8 100%);
+  background: linear-gradient(180deg, rgb(229, 220, 134) 0%, #ffe9a8 40%, #ffd9a8 100%);
 }
 
 /* Cloudy */
 body.cloudy {
-  background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 60%, #f8fafc 100%);
+  background: linear-gradient(180deg, rgb(244, 246, 248) 0%, #cbd5e1 60%, #f8fafc 100%);
 }
 
 /* Small responsive tweaks */
